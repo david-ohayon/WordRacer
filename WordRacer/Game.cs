@@ -18,9 +18,6 @@ namespace WordRacer
         private readonly string m_validAlphaCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         private int m_lastWordTimePos = 0;
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
         public Game()
         {
             InitializeComponent();
