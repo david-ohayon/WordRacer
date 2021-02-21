@@ -9,3 +9,4 @@ C:\Users\david\source\repos\WordRacer\WordRacer\obj\Debug\WordRacer.exe
 C:\Users\david\source\repos\WordRacer\WordRacer\obj\Debug\WordRacer.pdb
 C:\Users\david\source\repos\WordRacer\WordRacer\obj\Debug\WordRacer.Configure.resources
 C:\Users\david\source\repos\WordRacer\WordRacer\obj\Debug\WordRacer.GameStart.resources
+C:\Users\david\source\repos\WordRacer\WordRacer\obj\Debug\WordRacer.csprojAssemblyReference.cache
