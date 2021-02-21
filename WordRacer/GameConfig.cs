@@ -4,10 +4,10 @@ namespace WordRacer
 {
     public class GameConfig
     {
-        public int LetterPoolMode { get; set; } // 0=random (default), 1=static
+        public int LetterPoolMode { get; set; } // 0 = random (default), 1 = static
         public int LetterCount { get; set; }  // if moe is static, value can be 6-10.
         public int MinimumLettersPerWord { get; set; }
-        public int TimerMode { get; set; } // 0=none, 1=static seconds, 2=seconds per letter, 3=both
+        public int TimerMode { get; set; } // 0 = none, 1=static seconds, 2 = seconds per letter, 3 = both
         public int SecondsPerLetter { get; set; }
         public int StaticSeconds { get; set; }
         public bool PlaySounds { get; set; }
