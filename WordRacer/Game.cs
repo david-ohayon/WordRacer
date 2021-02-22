@@ -40,6 +40,10 @@ namespace WordRacer
             lblPoints.Text = "0";
             lblPossibleWords.Text = "";
 
+            //buttons
+            buttonSubmit.Enabled = false;
+            buttonSolve.Enabled = false;
+
             // init the progressbar
             progressBar.SetState(2); // make it red
             progressBar.Minimum = 0;
@@ -270,10 +274,7 @@ namespace WordRacer
                 {
                     sp.Play();
                 }
-                catch (Exception e)
-                {
-                    if (e != null) { }
-                }
+                catch { }
             }
         }
 
@@ -340,6 +341,8 @@ namespace WordRacer
             labelGameStats.Text = gameStats;
             labelGameStats.Visible = true;
             groupboxStats.Visible = true;
+            buttonSolve.Enabled = false;
+            buttonSubmit.Enabled = false;
         }
 
         /// <summary>
@@ -350,6 +353,8 @@ namespace WordRacer
             PlayGameSound("newgame.wav");
             labelGameStats.Visible = false;
             groupboxStats.Visible = false;
+            buttonSolve.Enabled = true;
+            buttonSubmit.Enabled = true;
             labelGameStats.Text = "";
 
             // determine how many letters the scrambled word will have
