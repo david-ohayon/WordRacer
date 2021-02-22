@@ -22,8 +22,8 @@ namespace WordRacer
         {
             InitializeComponent();
 
-            foreach (Control control in Controls.OfType<Control>().Where(control => control.Name.StartsWith("label")))
-                Program.AddFont("scramblefont", control);
+            foreach (Label lbl in Controls.OfType<Label>().Where(lbl => lbl.Name.StartsWith("label")))
+                Program.AddFont("scramblefont", lbl);
 
             // init the timer
             timerCountdown.Enabled = false;
@@ -180,7 +180,7 @@ namespace WordRacer
             e.DrawBackground();
             Brush myBrush = Brushes.Red;
             string word;
-            if (e.Index > 0)
+            if (e.Index >= 0)
                 word = ((ListBox)sender).Items[e.Index].ToString();
             else
                 word = "";

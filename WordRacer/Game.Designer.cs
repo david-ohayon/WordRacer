@@ -56,7 +56,7 @@
             // textboxScrambled
             // 
             this.textboxScrambled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(221)))), ((int)(((byte)(203)))));
-            this.textboxScrambled.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxScrambled.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxScrambled.Location = new System.Drawing.Point(187, 10);
             this.textboxScrambled.Margin = new System.Windows.Forms.Padding(4);
             this.textboxScrambled.Name = "textboxScrambled";
@@ -89,7 +89,7 @@
             // textboxWord
             // 
             this.textboxWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(221)))), ((int)(((byte)(203)))));
-            this.textboxWord.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxWord.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxWord.Location = new System.Drawing.Point(119, 83);
             this.textboxWord.Margin = new System.Windows.Forms.Padding(4);
             this.textboxWord.Name = "textboxWord";
