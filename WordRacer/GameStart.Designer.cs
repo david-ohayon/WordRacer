@@ -32,6 +32,7 @@ namespace WordRacer
             this.instructions = new System.Windows.Forms.Label();
             this.credits = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
+            this.buttonQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // instructions
@@ -67,11 +68,23 @@ namespace WordRacer
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
+            // buttonQuit
+            // 
+            this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuit.Location = new System.Drawing.Point(12, 367);
+            this.buttonQuit.Name = "buttonQuit";
+            this.buttonQuit.Size = new System.Drawing.Size(112, 70);
+            this.buttonQuit.TabIndex = 3;
+            this.buttonQuit.Text = "NO";
+            this.buttonQuit.UseVisualStyleBackColor = true;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
+            // 
             // GameStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 449);
+            this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.credits);
             this.Controls.Add(this.instructions);
@@ -92,5 +105,6 @@ namespace WordRacer
         private System.Windows.Forms.Label instructions;
         private System.Windows.Forms.Label credits;
         private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Button buttonQuit;
     }
 }

@@ -22,7 +22,7 @@ namespace WordRacer
 
         public void Start()
         {
-            Program.AddFont("PixelEmulatorfont", credits, instructions, buttonStart);
+            Program.AddFont("PixelEmulatorfont", credits, instructions, buttonStart, buttonQuit);
             credits.Text = "This game has been made by David && Ilay";
             instructions.Text = $"The game is basically a scrabble\n" +
                 "You have a set of letters and the game is to make valid english 3-10 letters words\n" +
@@ -32,6 +32,10 @@ namespace WordRacer
         {
             Hide();
             new Game().Show();
+        }
+        private void buttonQuit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
