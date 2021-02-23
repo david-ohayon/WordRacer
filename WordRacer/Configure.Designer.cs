@@ -157,7 +157,7 @@
             // textboxLetterPool
             // 
             this.textboxLetterPool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(221)))), ((int)(((byte)(203)))));
-            this.textboxLetterPool.Location = new System.Drawing.Point(329, 86);
+            this.textboxLetterPool.Location = new System.Drawing.Point(329, 79);
             this.textboxLetterPool.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.textboxLetterPool.MaxLength = 2;
             this.textboxLetterPool.Name = "textboxLetterPool";
