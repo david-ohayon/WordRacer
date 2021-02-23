@@ -95,7 +95,7 @@
             this.textboxWord.Name = "textboxWord";
             this.textboxWord.Size = new System.Drawing.Size(387, 44);
             this.textboxWord.TabIndex = 12;
-            this.textboxWord.TextChanged += new System.EventHandler(this.textboxWord_TextChanged);
+            this.textboxWord.TextChanged += new System.EventHandler(this.TextboxWord_TextChanged);
             // 
             // labelScore
             // 
@@ -239,7 +239,7 @@
             // 
             // timerCountdown
             // 
-            this.timerCountdown.Tick += new System.EventHandler(this.timerCountdown_Tick);
+            this.timerCountdown.Tick += new System.EventHandler(this.TimerCountdown_Tick);
             // 
             // buttonConfigure
             // 
@@ -254,7 +254,7 @@
             this.buttonConfigure.TabIndex = 24;
             this.buttonConfigure.Text = "Configure";
             this.buttonConfigure.UseVisualStyleBackColor = false;
-            this.buttonConfigure.Click += new System.EventHandler(this.buttonConfigure_Click);
+            this.buttonConfigure.Click += new System.EventHandler(this.ButtonConfigure_Click);
             // 
             // groupboxStats
             // 

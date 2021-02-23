@@ -73,18 +73,6 @@ namespace WordRacer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int SecondsPerLetter {
-            get {
-                return ((int)(this["SecondsPerLetter"]));
-            }
-            set {
-                this["SecondsPerLetter"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("60")]
         public int StaticSeconds {
             get {
@@ -119,18 +107,6 @@ namespace WordRacer.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowInstructions {
-            get {
-                return ((bool)(this["ShowInstructions"]));
-            }
-            set {
-                this["ShowInstructions"] = value;
-            }
-        }
-        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("6")]
@@ -160,28 +136,10 @@ namespace WordRacer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int MaxStaticSeconds {
             get {
                 return ((int)(this["MaxStaticSeconds"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
-        public int MinSecondsPerLetter {
-            get {
-                return ((int)(this["MinSecondsPerLetter"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int MaxSecondsPerLetter {
-            get {
-                return ((int)(this["MaxSecondsPerLetter"]));
             }
         }
     }

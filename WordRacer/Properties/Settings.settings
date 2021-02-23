@@ -14,9 +14,6 @@
     <Setting Name="TimerMode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="SecondsPerLetter" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
-    </Setting>
     <Setting Name="StaticSeconds" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">60</Value>
     </Setting>
@@ -25,9 +22,6 @@
     </Setting>
     <Setting Name="AllowRepeatedWords" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ShowInstructions" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="MinLetterPool" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">6</Value>
@@ -39,13 +33,7 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="MaxStaticSeconds" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">60</Value>
-    </Setting>
-    <Setting Name="MinSecondsPerLetter" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">3</Value>
-    </Setting>
-    <Setting Name="MaxSecondsPerLetter" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">100</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -122,7 +122,7 @@ namespace WordRacer
         /// <summary>
         /// Fired when the user types a letter
         /// </summary>
-        private void textboxWord_TextChanged(object sender, EventArgs e)
+        private void TextboxWord_TextChanged(object sender, EventArgs e)
         {
             // only allow certain alphabetic characters.
             if (textboxWord.Text != "")
@@ -139,7 +139,7 @@ namespace WordRacer
         /// <summary>
         /// Fired when the timer ticks
         /// </summary>
-        private void timerCountdown_Tick(object sender, EventArgs e)
+        private void TimerCountdown_Tick(object sender, EventArgs e)
         {
             // calculate and display the time remaining
             TimeRemaining(false);
@@ -148,7 +148,7 @@ namespace WordRacer
         /// <summary>
         /// Displays the configuration dialog.
         /// </summary>
-        private void buttonConfigure_Click(object sender, EventArgs e)
+        private void ButtonConfigure_Click(object sender, EventArgs e)
         {
             Configure configForm = new Configure
             {
@@ -161,9 +161,6 @@ namespace WordRacer
             }
         }
 
-        /// <summary>
-        /// Closes the application.
-        /// </summary>
         private void buttonDone_Click(object sender, EventArgs e)
         {
             Close();
@@ -279,9 +276,7 @@ namespace WordRacer
         }
 
         /// <summary>
-        /// Calculates remaining time, and updates the progressbar. If the 
-        /// user hasn't entered a word in 10 seconds, an annoying taunt 
-        /// wav file is played.
+        /// Calculates remaining time, and updates the progressbar.
         /// </summary>
         private void TimeRemaining(bool beginning)
         {
@@ -399,12 +394,6 @@ namespace WordRacer
                     break;
                 case 1: // static
                     m_remaining = m_config.StaticSeconds;
-                    break;
-                case 2: // seconds per letter
-                    m_remaining = m_config.SecondsPerLetter * letterCount;
-                    break;
-                case 3: // both static and seconds per letter
-                    m_remaining = m_config.StaticSeconds + m_config.SecondsPerLetter;
                     break;
                 default:
                     m_remaining = 0;

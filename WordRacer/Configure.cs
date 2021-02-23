@@ -20,6 +20,9 @@ namespace WordRacer
         public Configure()
         {
             InitializeComponent();
+
+            foreach (Control control in Controls)
+                Program.AddFont("PixelEmulatorfont", control);
         }
 
         /// <summary>
@@ -50,7 +53,6 @@ namespace WordRacer
             m_radiogroupLetterPoolMode = m_config.LetterPoolMode;
 
             int letterCount = m_config.LetterCount;
-            //letterCount = Math.Min(Math.Max(letterCount, 6), 10);
             textboxLetterPool.Text = Convert.ToString(letterCount);
 
             // Timing
@@ -59,35 +61,23 @@ namespace WordRacer
                 case 0:
                     radioTimerNone.Checked = true;
                     radioTimerStatic.Checked = false;
-                    radioTimerPerLetter.Checked = false;
-                    radioTimerBoth.Checked = false;
                     break;
                 case 1:
                     radioTimerNone.Checked = false;
                     radioTimerStatic.Checked = true;
-                    radioTimerPerLetter.Checked = false;
-                    radioTimerBoth.Checked = false;
                     break;
                 case 2:
                     radioTimerNone.Checked = false;
                     radioTimerStatic.Checked = false;
-                    radioTimerPerLetter.Checked = true;
-                    radioTimerBoth.Checked = false;
                     break;
                 case 3:
                     radioTimerNone.Checked = false;
                     radioTimerStatic.Checked = false;
-                    radioTimerPerLetter.Checked = false;
-                    radioTimerBoth.Checked = true;
                     break;
             }
             m_radiogroupTimerMode = m_config.TimerMode;
             int secondsStatic = m_config.StaticSeconds;
-            //secondsStatic = Math.Min(Math.Max(secondsStatic, 10), 60);
             textboxTimerStatic.Text = Convert.ToString(secondsStatic);
-            int secondsPerLetter = m_config.SecondsPerLetter;
-            //secondsPerLetter = Math.Min(Math.Max(secondsPerLetter, 3), 10);
-            textboxSecondsPerLetter.Text = Convert.ToString(secondsPerLetter);
 
             // other settings
             checkboxPlaySounds.Checked = m_config.PlaySounds;
@@ -104,10 +94,8 @@ namespace WordRacer
         /// <returns>True if the OK button can be clicked</returns>
         private bool CanClickOK()
         {
-            bool canClick = (radioLetterPoolRandom.Checked || (radioLetterPoolStatic.Checked && textboxLetterPool.Text != ""));
-            canClick &= (radioTimerNone.Checked ||
-                         ((radioTimerStatic.Checked || radioTimerBoth.Checked) && (textboxTimerStatic.Text != "")) ||
-                         ((radioTimerPerLetter.Checked || radioTimerBoth.Checked) && (textboxSecondsPerLetter.Text != "")));
+            bool canClick = radioLetterPoolRandom.Checked || (radioLetterPoolStatic.Checked && textboxLetterPool.Text != "");
+            canClick &= radioTimerNone.Checked || (radioTimerStatic.Checked && (textboxTimerStatic.Text != ""));
             return canClick;
         }
 
@@ -117,8 +105,7 @@ namespace WordRacer
         private void UpdateControls()
         {
             textboxLetterPool.Enabled = radioLetterPoolStatic.Checked;
-            textboxTimerStatic.Enabled = radioTimerStatic.Checked || radioTimerBoth.Checked;
-            textboxSecondsPerLetter.Enabled = radioTimerPerLetter.Checked || radioTimerBoth.Checked;
+            textboxTimerStatic.Enabled = radioTimerStatic.Checked;
 
             buttonOK.Enabled = CanClickOK();
         }
@@ -134,8 +121,8 @@ namespace WordRacer
             if (radioLetterPoolStatic.Checked)
             {
                 value = Convert.ToInt32(textboxLetterPool.Text);
-                valid = (value >= Settings.Default.MinLetterPool &&
-                         value <= Settings.Default.MaxLetterPool);
+                valid = value >= Settings.Default.MinLetterPool &&
+                         value <= Settings.Default.MaxLetterPool;
             }
             if (!valid)
             {
@@ -146,25 +133,13 @@ namespace WordRacer
             if (radioTimerStatic.Checked)
             {
                 value = Convert.ToInt32(textboxTimerStatic.Text);
-                valid = (value >= Settings.Default.MinStaticSeconds &&
-                         value <= Settings.Default.MaxStaticSeconds);
+                valid = value >= Settings.Default.MinStaticSeconds &&
+                          value <= Settings.Default.MaxStaticSeconds;
             }
             if (!valid)
             {
-                MessageBox.Show("The static time value must be from 10-60.", "Data Error");
+                MessageBox.Show("The static time value must be from 10-100.", "Data Error");
                 textboxTimerStatic.Focus();
-                return valid;
-            }
-            if (radioTimerPerLetter.Checked)
-            {
-                value = Convert.ToInt32(textboxSecondsPerLetter.Text);
-                valid = (value >= Settings.Default.MinSecondsPerLetter &&
-                         value <= Settings.Default.MaxSecondsPerLetter);
-            }
-            if (!valid)
-            {
-                MessageBox.Show("The seconds per letter value must be from 3-10.", "Data Error");
-                textboxSecondsPerLetter.Focus();
                 return valid;
             }
             return valid;
@@ -179,7 +154,6 @@ namespace WordRacer
             m_config.LetterCount = Convert.ToInt32(textboxLetterPool.Text);
             m_config.TimerMode = m_radiogroupTimerMode;
             m_config.StaticSeconds = Convert.ToInt32(textboxTimerStatic.Text);
-            m_config.SecondsPerLetter = Convert.ToInt32(textboxSecondsPerLetter.Text);
             m_config.PlaySounds = checkboxPlaySounds.Checked;
             m_config.AllowRepeatedWords = checkboxAllowRepeats.Checked;
             m_config.Write();
